@@ -2,7 +2,7 @@ import { eq } from "drizzle-orm";
 import { db } from "./db";
 import { responses } from "./db/schema";
 
-type ResponseType = {
+export type ResponseType = {
   userId: string;
   result: string;
 };
@@ -21,5 +21,5 @@ export const getResponseById = async (userId: string) => {
     .from(responses)
     .where(eq(responses.userId, userId));
 
-  return responseById.length > 0 ? responseById[0] : null;
+  return responseById[0];
 };
