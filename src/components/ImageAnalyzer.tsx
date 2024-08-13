@@ -31,9 +31,9 @@ export default function ImageAnalyzer() {
         <Image
           src={image}
           alt="An image of uploaded document"
-          className="mb-8 w-full object-contain"
-          width={500}
-          height={500}
+          className="mb-8 w-1/3 object-contain"
+          width={250}
+          height={100}
         />
       ) : null}
 
