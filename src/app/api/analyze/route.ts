@@ -1,11 +1,20 @@
 import { analyzeImage } from "@/lib/analyzer";
 import { NextResponse, NextRequest } from "next/server";
+import { insertResponse } from "@/lib/mockDB";
 
 export const runtime = "edge";
 
 export async function POST(request: NextRequest) {
   const data = await request.formData();
   const file: File | null = data.get("file") as unknown as File;
+  const userId = data.get("userId") as string;
+
+  const response = {
+    userId: userId,
+    timestamp: new Date(),
+  };
+
+  insertResponse(response);
 
   if (!file) {
     return NextResponse.json(
