@@ -1,8 +1,8 @@
 import { analyzeImage } from "@/lib/analyzer";
 import { NextResponse, NextRequest } from "next/server";
-import { insertResponse } from "@/lib/mockDB";
+import { addResponse } from "@/server/queries";
 
-export const runtime = "edge";
+//export const runtime = "edge";
 
 export async function POST(request: NextRequest) {
   const data = await request.formData();
@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     timestamp: new Date(),
   };
 
-  insertResponse(response);
+  await addResponse(response);
 
   if (!file) {
     return NextResponse.json(
