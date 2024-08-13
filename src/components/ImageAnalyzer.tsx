@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import Image from "next/image";
 
 export default function ImageAnalyzer() {
@@ -9,8 +9,20 @@ export default function ImageAnalyzer() {
   const [submitted, setSubmitted] = useState(false);
   const [inputKey, setInputKey] = useState(new Date().toString());
 
-  const onSubmit = () => {
-    return null;
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitted(true);
+
+    const formData = new FormData();
+    formData.append("file", file as File);
+
+    const res = await fetch("/api/analyze", {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await res.text();
+    setResponse(result);
   };
 
   return (
