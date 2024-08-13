@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getResponsesByUserId } from "@/lib/mockDB";
+import { getResponseById } from "@/server/queries";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -12,7 +12,16 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const responses = getResponsesByUserId(userId);
-
-  return NextResponse.json(responses);
+  try {
+    const responses = await getResponseById(userId);
+    console.log("userId: ", userId);
+    console.log("responses: ", responses);
+    return NextResponse.json(responses);
+  } catch (error) {
+    console.error("Error fetching responses:", error);
+    return NextResponse.json(
+      { message: "Failed to fetch responses" },
+      { status: 500 }
+    );
+  }
 }

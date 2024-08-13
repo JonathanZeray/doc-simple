@@ -21,5 +21,5 @@ export const getResponseById = async (userId: string) => {
     .from(responses)
     .where(eq(responses.userId, userId));
 
-  return responseById[0];
+  return responseById;
 };
