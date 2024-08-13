@@ -9,8 +9,11 @@ export async function POST(request: NextRequest) {
   const file: File | null = data.get("file") as unknown as File;
   const userId = data.get("userId") as string;
 
+  const analysisResult = await analyzeImage(file);
+
   const response = {
     userId: userId,
+    result: analysisResult,
     timestamp: new Date(),
   };
 

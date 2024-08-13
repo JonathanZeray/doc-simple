@@ -3,10 +3,10 @@ export const Navbar = () => {
   return (
     <nav className="p-4 pb-8">
       <ul className="flex justify-between">
-        <li>home</li>
+        <Link href="/">home</Link>
         <Link href="/sign-in">login</Link>
         <Link href="/sign-up">register</Link>
-        <li>get started</li>
+        <Link href="/prev-uploads">uploads</Link>
       </ul>
     </nav>
   );
