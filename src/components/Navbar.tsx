@@ -4,9 +4,9 @@ export const Navbar = () => {
     <nav className="p-4 pb-8">
       <ul className="flex justify-between">
         <li>home</li>
+        <Link href="/sign-in">login</Link>
         <Link href="/sign-up">register</Link>
         <li>get started</li>
-        <li>about</li>
       </ul>
     </nav>
   );
