@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { NumberWithCircle } from "@/ui/NumberCircles";
+
 const stepVariants = {
   visible: { opacity: 1 },
   hidden: { opacity: 0 },
