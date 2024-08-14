@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { HamburgerButton } from "@/ui/Buttons";
+import { SignedOut, SignedIn } from "@clerk/nextjs";
 
 export const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -110,24 +111,38 @@ export const MobileNav = () => {
                   About us and why this site was created
                 </p>
               </Link>
-              <Link
-                href="/sign-up"
-                onClick={() => setIsOpen(!isOpen)}
-                className=" px-8 py-2 text-darkBrown"
-              >
-                <h4 className="font-semibold text-lg">Register</h4>
-                <p className="opacity-60">Create an account to get started</p>
-              </Link>
-              <Link
-                href="/sign-in"
-                onClick={() => setIsOpen(!isOpen)}
-                className=" px-8 py-2 text-darkBrown"
-              >
-                <h4 className="font-semibold text-lg">Login</h4>
-                <p className="opacity-60">
-                  Store all your documents in one place
-                </p>
-              </Link>
+              <SignedOut>
+                <Link
+                  href="/sign-up"
+                  onClick={() => setIsOpen(!isOpen)}
+                  className=" px-8 py-2 text-darkBrown"
+                >
+                  <h4 className="font-semibold text-lg">Register</h4>
+                  <p className="opacity-60">Create an account to get started</p>
+                </Link>
+                <Link
+                  href="/sign-in"
+                  onClick={() => setIsOpen(!isOpen)}
+                  className=" px-8 py-2 text-darkBrown"
+                >
+                  <h4 className="font-semibold text-lg">Login</h4>
+                  <p className="opacity-60">
+                    Store all your documents in one place
+                  </p>
+                </Link>
+              </SignedOut>
+              <SignedIn>
+                <Link
+                  href="/prev-uploads"
+                  onClick={() => setIsOpen(!isOpen)}
+                  className=" px-8 py-2 text-darkBrown"
+                >
+                  <h4 className="font-semibold text-lg">Uploads</h4>
+                  <p className="opacity-60">
+                    View your previously simplified documents
+                  </p>
+                </Link>
+              </SignedIn>
             </ul>
           </motion.div>
         </>
