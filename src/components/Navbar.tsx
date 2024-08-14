@@ -1,5 +1,6 @@
 import { NavLink } from "@/ui/Buttons";
 import { SignedIn, UserButton, SignedOut } from "@clerk/nextjs";
+import { MobileNav } from "./MobileNav";
 
 export const Navbar = () => {
   return (
@@ -20,6 +21,7 @@ export const Navbar = () => {
           </SignedIn>
         </div>
       </nav>
+      <MobileNav />
     </>
   );
 };
