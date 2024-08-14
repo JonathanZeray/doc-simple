@@ -5,7 +5,7 @@ export const LandingPage = () => {
   return (
     <>
       <div className="flex flex-col-reverse sm:flex-row w-full sm:h-screen gap-16 sm:gap-0 pb-24">
-        <div className="flex flex-col px-4 sm:ml-12 justify-center gap-4 sm:gap-10">
+        <div className="flex flex-col px-4 sm:px-12 justify-center gap-4 sm:gap-10">
           <h1 className="text-5xl sm:text-8xl font-bold text-darkBrown font-bebasNeue">
             In other words
           </h1>
@@ -16,7 +16,7 @@ export const LandingPage = () => {
               now and get clear explanations in seconds.
             </h3>
             <Link
-              href="/login"
+              href="/sign-up"
               className="flex items-center px-6 py-1 text-2xl font-semibold border-2 border-black w-fit rounded-xl font-bebasNeue bg-[#ff8a60]"
             >
               <span className="mr-4">Get Started</span>

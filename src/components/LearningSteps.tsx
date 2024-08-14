@@ -9,7 +9,9 @@ const stepVariants = {
 export const LearningSteps = () => {
   return (
     <>
-      <h3>how it works</h3>
+      <h3 className="mx-12 text-5xl sm:text-6xl font-bold text-darkBrown font-bebasNeue border-b-4 border-darkBrown w-fit">
+        How it works
+      </h3>
       <section className="flex flex-col sm:flex-row w-full justify-between min-h-60 mb-12">
         <motion.div
           initial="hidden"
@@ -41,7 +43,7 @@ export const LearningSteps = () => {
           </h4>
           <p>
             Navigate to the upload section and select your document image (JPG,
-            PNG, PDF) to upload.
+            PNG, WEBP) to upload.
           </p>
         </motion.div>
         <motion.div
