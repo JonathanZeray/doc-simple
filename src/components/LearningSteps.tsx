@@ -9,7 +9,7 @@ const stepVariants = {
 export const LearningSteps = () => {
   return (
     <>
-      <h3 className="mx-12 text-5xl sm:text-6xl font-bold text-darkBrown font-bebasNeue border-b-4 border-darkBrown w-fit">
+      <h3 className="px-12 text-5xl sm:text-6xl font-bold text-darkBrown font-bebasNeue w-fit">
         How it works
       </h3>
       <section className="flex flex-col sm:flex-row w-full justify-between min-h-60 mb-12">
@@ -25,7 +25,9 @@ export const LearningSteps = () => {
             1
           </span>
           <h4 className="text-xl font-bold text-darkBrown pb-6 pt-2">Login</h4>
-          <p>Create an account by using Google or with a email & password.</p>
+          <p className="text-darkBrown">
+            Create an account by using Google or with a email & password.
+          </p>
         </motion.div>
         <motion.div
           initial="hidden"
@@ -41,7 +43,7 @@ export const LearningSteps = () => {
           <h4 className="text-xl font-bold text-darkBrown pb-6 pt-2">
             Upload Document
           </h4>
-          <p>
+          <p className="text-darkBrown">
             Navigate to the upload section and select your document image (JPG,
             PNG, WEBP) to upload.
           </p>
@@ -60,7 +62,7 @@ export const LearningSteps = () => {
           <h4 className="text-xl font-bold text-darkBrown pb-6 pt-2">
             Submit for processing
           </h4>
-          <p>
+          <p className="text-darkBrown">
             Click the Submit button to send your document and context for
             processing.
           </p>
@@ -79,7 +81,7 @@ export const LearningSteps = () => {
           <h4 className="text-xl font-bold text-darkBrown pb-6 pt-2">
             Get simplified information
           </h4>
-          <p>
+          <p className="text-darkBrown">
             View the simplified version of your document, presented in
             easy-to-understand language.
           </p>
