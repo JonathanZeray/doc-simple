@@ -80,7 +80,7 @@ export default function ImageAnalyzer() {
               <option value="ru">Russian</option>
             </select> */}
             <div className="flex flex-col items-center">
-              <h4 className="font-semibold font-bebasNeue text-xl">
+              <h4 className="font-semibold font-bebasNeue text-lg text-darkBrown">
                 Choose what language you want your response in
               </h4>
               <div>
@@ -88,7 +88,7 @@ export default function ImageAnalyzer() {
                   type="button"
                   onClick={() => setLanguage("en")}
                   className={`px-2 m-1  ${
-                    language === "en" ? "border-2 border-blue-500" : ""
+                    language === "en" ? "border-2 border-darkGreen" : ""
                   } rounded-md`}
                 >
                   <EngFlag />
@@ -97,7 +97,7 @@ export default function ImageAnalyzer() {
                   type="button"
                   onClick={() => setLanguage("sv")}
                   className={`px-2 m-1 ${
-                    language === "sv" ? "border-2 border-blue-500" : ""
+                    language === "sv" ? "border-2 border-darkGreen" : ""
                   } rounded-md`}
                 >
                   <SweFlag />
@@ -106,7 +106,7 @@ export default function ImageAnalyzer() {
                   type="button"
                   onClick={() => setLanguage("fr")}
                   className={`px-2 m-1 ${
-                    language === "fr" ? "border-2 border-blue-500" : ""
+                    language === "fr" ? "border-2 border-darkGreen" : ""
                   } rounded-md`}
                 >
                   <FrFlag />
@@ -115,7 +115,7 @@ export default function ImageAnalyzer() {
                   type="button"
                   onClick={() => setLanguage("es")}
                   className={`px-2 m-1 ${
-                    language === "es" ? "border-2 border-blue-500" : ""
+                    language === "es" ? "border-2 border-darkGreen" : ""
                   } rounded-md`}
                 >
                   <EsFlag />
@@ -124,7 +124,7 @@ export default function ImageAnalyzer() {
                   type="button"
                   onClick={() => setLanguage("ru")}
                   className={`px-2 m-1  ${
-                    language === "ru" ? "border-2 border-blue-500" : ""
+                    language === "ru" ? "border-2 border-darkGreen" : ""
                   } rounded-md`}
                 >
                   <RuFlag />
@@ -141,20 +141,21 @@ export default function ImageAnalyzer() {
                 )}
               </p>
             )}
-
-            <div className="flex flex-row">
+            {/*     <button className="px-4 py-1 bg-darkBrown text-white  text-xl w-fit rounded-lg">
+             */}
+            <div className="flex flex-row gap-4">
               <button
                 className={`${
-                  submitted || !file ? "opacity-50" : "hover:bg-gray-100"
-                } bg-white mr-4 text-slate-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow`}
+                  submitted || !file ? "opacity-40" : "hover:opacity-90"
+                } px-4 py-1 bg-darkBrown text-white  text-xl w-fit rounded-lg shadow-xl`}
                 type="submit"
                 disabled={submitted || !file}
               >
-                Simplify
+                Submit
               </button>
 
               <button
-                className="bg-white hover:bg-red-100 text-red-800 font-semibold py-2 px-4 border border-red-400 rounded shadow"
+                className="bg-white hover:bg-red-100 text-red-800 font-semibold text-xl px-4 py-1 border border-red-400 rounded-lg shadow"
                 type="button"
                 onClick={() => {
                   setFile(null);
