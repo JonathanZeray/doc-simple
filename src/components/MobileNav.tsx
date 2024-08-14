@@ -10,7 +10,7 @@ export const MobileNav = () => {
 
   return (
     <div className="flex sm:hidden items-center p-4">
-      <div className="z-20 text-darkBrown">IoW</div>
+      <div className="z-50 text-darkBrown">IoW</div>
       <HamburgerButton isOpen={isOpen} toggleOpen={toggleOpen} />
 
       {isOpen && (
@@ -23,7 +23,7 @@ export const MobileNav = () => {
               duration: 0.5,
             }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black z-10"
+            className="fixed inset-0 bg-black z-40"
           ></motion.div>
           <motion.div
             initial={{ opacity: 0, y: -100 }}
@@ -33,7 +33,7 @@ export const MobileNav = () => {
               duration: 0.4,
             }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-[#fff9f2] z-10 flex flex-col items-center justify-center h-2/5 rounded-b-xl"
+            className="fixed inset-0 bg-[#fff9f2] z-40 flex flex-col items-center justify-center h-2/5 rounded-b-xl"
           >
             <ul className="w-full h-full flex flex-col gap-2  justify-center">
               <Link

@@ -26,7 +26,7 @@ export const HamburgerButton = ({
 }: HamburgerButtonProps) => (
   <button
     onClick={toggleOpen}
-    className="absolute right-5 flex flex-col justify-center items-center z-20"
+    className="absolute right-5 flex flex-col justify-center items-center z-50"
   >
     <span
       className={`bg-darkBrown block transition-all duration-300 ease-out 
