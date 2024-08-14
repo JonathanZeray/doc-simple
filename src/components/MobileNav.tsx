@@ -19,7 +19,7 @@ export const MobileNav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.scrollY;
 
       if (navRef.current) {
         if (prevScrollPos.current > currentScrollPos) {
