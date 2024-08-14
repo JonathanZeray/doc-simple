@@ -1,15 +1,49 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { HamburgerButton } from "@/ui/Buttons";
 
 export const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleOpen = () => setIsOpen(!isOpen);
+  const [isVisible, setIsVisible] = useState(true);
+  const prevScrollPos = useRef(0);
+  const navRef = useRef<HTMLElement>(null);
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+    isOpen
+      ? (document.body.style.overflow = "unset")
+      : (document.body.style.overflow = "hidden");
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+
+      if (navRef.current) {
+        if (prevScrollPos.current > currentScrollPos) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      }
+
+      prevScrollPos.current = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="flex sm:hidden items-center p-4">
+    <nav
+      ref={navRef}
+      className={`sticky transition-all duration-300 ease-in-out flex sm:hidden items-center p-4 ${
+        isVisible ? "top-0" : "-top-20"
+      }`}
+    >
       <div className="z-50 text-darkBrown">
         <Link href="/" onClick={() => setIsOpen(false)}>
           IoW
@@ -27,7 +61,9 @@ export const MobileNav = () => {
               duration: 0.5,
             }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black z-40"
+            className={`fixed inset-0 bg-black z-40 ${
+              isVisible ? "top-0" : "-top-20"
+            }`}
           ></motion.div>
           <motion.div
             initial={{ opacity: 0, y: -100 }}
@@ -37,7 +73,9 @@ export const MobileNav = () => {
               duration: 0.4,
             }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-[#fff9f2] z-40 flex flex-col items-center justify-center h-2/5 rounded-b-xl"
+            className={`fixed inset-0 bg-[#fff9f2] z-40 flex flex-col items-center justify-center h-2/5 rounded-b-xl ${
+              isVisible ? "top-0" : "-top-20"
+            }`}
           >
             <ul className="w-full h-full flex flex-col gap-2  justify-center">
               <Link
@@ -72,6 +110,6 @@ export const MobileNav = () => {
           </motion.div>
         </>
       )}
-    </div>
+    </nav>
   );
 };

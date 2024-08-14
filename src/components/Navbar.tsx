@@ -5,7 +5,7 @@ import { MobileNav } from "./MobileNav";
 export const Navbar = () => {
   return (
     <>
-      <nav className="hidden sm:flex px-12 justify-between pt-4 pb-1 sticky top-0 backdrop-blur-sm">
+      <nav className="hidden sm:flex px-12 justify-between pt-4 pb-1 sticky top-0 backdrop-blur-[2px]">
         <div className="text-xl font-semibold">
           <NavLink href="/" text="IoW" />
         </div>
