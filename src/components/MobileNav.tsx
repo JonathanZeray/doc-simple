@@ -49,7 +49,29 @@ export const MobileNav = () => {
           IoW
         </Link>
       </div>
-      <HamburgerButton isOpen={isOpen} toggleOpen={toggleOpen} />
+      <button
+        onClick={toggleOpen}
+        className="absolute right-5 flex flex-col justify-center items-center z-50"
+      >
+        <span
+          className={`bg-darkBrown block transition-all duration-300 ease-out 
+                h-0.5 w-6 rounded-sm ${
+                  isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
+                }`}
+        ></span>
+        <span
+          className={`bg-darkBrown block transition-all duration-300 ease-out 
+                h-0.5 w-6 rounded-sm my-0.5 ${
+                  isOpen ? "opacity-0" : "opacity-100"
+                }`}
+        ></span>
+        <span
+          className={`bg-darkBrown block transition-all duration-300 ease-out 
+                h-0.5 w-6 rounded-sm ${
+                  isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
+                }`}
+        ></span>
+      </button>
 
       {isOpen && (
         <>

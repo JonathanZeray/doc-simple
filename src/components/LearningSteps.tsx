@@ -24,7 +24,9 @@ export const LearningSteps = () => {
           <span className="bg-darkBrown text-white text-base font-bold px-2 rounded-full w-fit h-fit">
             1
           </span>
-          <h4 className="text-xl font-bold text-darkBrown pb-6 pt-2">Login</h4>
+          <h4 className="text-xl font-bold text-darkBrown pb-2 sm:pb-6 pt-2">
+            Login
+          </h4>
           <p className="text-darkBrown">
             Create an account by using Google or with a email & password.
           </p>
@@ -40,7 +42,7 @@ export const LearningSteps = () => {
           <span className="bg-darkBrown text-white text-base font-bold px-2 rounded-full w-fit h-fit">
             2
           </span>
-          <h4 className="text-xl font-bold text-darkBrown pb-6 pt-2">
+          <h4 className="text-xl font-bold text-darkBrown pb-2 sm:pb-6 pt-2">
             Upload Document
           </h4>
           <p className="text-darkBrown">
@@ -59,7 +61,7 @@ export const LearningSteps = () => {
           <span className="bg-darkBrown text-white text-base font-bold px-2 rounded-full w-fit h-fit">
             3
           </span>
-          <h4 className="text-xl font-bold text-darkBrown pb-6 pt-2">
+          <h4 className="text-xl font-bold text-darkBrown pb-2 sm:pb-6 pt-2">
             Submit for processing
           </h4>
           <p className="text-darkBrown">
@@ -78,7 +80,7 @@ export const LearningSteps = () => {
           <span className="bg-darkBrown text-white text-base font-bold px-2 rounded-full w-fit h-fit">
             4
           </span>
-          <h4 className="text-xl font-bold text-darkBrown pb-6 pt-2">
+          <h4 className="text-xl font-bold text-darkBrown pb-2 sm:pb-6 pt-2">
             Get simplified information
           </h4>
           <p className="text-darkBrown">
