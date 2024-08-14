@@ -2,7 +2,7 @@ import { OpenAI } from "openai";
 
 const openAi = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-export const analyzeImage = async (file: File) => {
+export const analyzeImage = async (file: File, language: string) => {
   const encoded = await file
     .arrayBuffer()
     .then((buffer) => Buffer.from(buffer).toString("base64"));
@@ -17,7 +17,8 @@ export const analyzeImage = async (file: File) => {
             type: "text",
             text:
               "Summarize this document with specific bulletpoints. Avoid using technical terms" +
-              " using simple to understand, common language. Do not include anything else in the response.",
+              " using simple to understand, common language. Do not include anything else in the response." +
+              `Please provide the summary in ${language}.`,
           },
           {
             type: "image_url",

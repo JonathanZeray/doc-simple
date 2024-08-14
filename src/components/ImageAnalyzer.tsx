@@ -10,6 +10,7 @@ export default function ImageAnalyzer() {
   const [response, setResponse] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [inputKey, setInputKey] = useState(new Date().toString());
+  const [language, setLanguage] = useState("en");
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ export default function ImageAnalyzer() {
     const formData = new FormData();
     formData.append("file", file as File);
     formData.append("userId", userId as string);
+    formData.append("language", language);
 
     const res = await fetch("/api/analyze", {
       method: "POST",
@@ -57,6 +59,17 @@ export default function ImageAnalyzer() {
                 }
               }}
             />
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
+              className="mt-4 p-2 border rounded"
+            >
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+              <option value="sv">Swedish</option>
+              <option value="ru">Russian</option>
+            </select>
 
             <p className="py-8 text-slate-800">
               {submitted && !response ? "Processing..." : response}

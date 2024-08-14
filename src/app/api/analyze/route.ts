@@ -8,8 +8,9 @@ export async function POST(request: NextRequest) {
   const data = await request.formData();
   const file: File | null = data.get("file") as unknown as File;
   const userId = data.get("userId") as string;
+  const language: string = data.get("language") as string;
 
-  const analysisResult = await analyzeImage(file);
+  const analysisResult = await analyzeImage(file, language);
 
   const response = {
     userId: userId,
@@ -26,7 +27,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const responseStream = await analyzeImage(file);
+  const responseStream = await analyzeImage(file, language);
 
   return new Response(responseStream);
 }
