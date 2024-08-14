@@ -22,8 +22,6 @@ export const NavLink = ({ text, href }: NavLinkProps) => {
   );
 };
 
-import React from "react";
-
 export const HamburgerButton = ({
   isOpen,
   toggleOpen,
