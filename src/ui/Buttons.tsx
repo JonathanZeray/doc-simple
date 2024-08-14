@@ -63,7 +63,7 @@ export const CTAButton = ({ text }: CTAButtonProps) => {
 
 export const CTAButtonWithArrow = ({ text }: CTAButtonProps) => {
   return (
-    <button className="flex items-center px-8 py-2 text-xl font-semibold border-2 border-black w-fit rounded-xl bg-[#ff8a60]">
+    <button className="flex items-center px-8 py-2 text-xl font-semibold border-black border-2">
       <span className="mr-4">{text}</span>
       <span className="text-xl">→</span>
     </button>
