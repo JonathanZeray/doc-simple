@@ -10,6 +10,10 @@ type HamburgerButtonProps = {
   toggleOpen: () => void;
 };
 
+type CTAButtonProps = {
+  text: string;
+};
+
 export const NavLink = ({ text, href }: NavLinkProps) => {
   return (
     <Link href={href} className="text-darkBrown">
@@ -48,3 +52,20 @@ export const HamburgerButton = ({
     ></span>
   </button>
 );
+
+export const CTAButton = ({ text }: CTAButtonProps) => {
+  return (
+    <button className="px-8 py-2 text-2xl font-semibold border-2 border-black w-fit bg-[#ff8a60] rounded-xl hover:underline underline-offset-2 ">
+      {text}
+    </button>
+  );
+};
+
+export const CTAButtonWithArrow = ({ text }: CTAButtonProps) => {
+  return (
+    <button className="flex items-center px-8 py-2 text-xl font-semibold border-2 border-black w-fit rounded-xl bg-[#ff8a60]">
+      <span className="mr-4">{text}</span>
+      <span className="text-xl">→</span>
+    </button>
+  );
+};
