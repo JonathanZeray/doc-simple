@@ -2,6 +2,13 @@
 import { useState, FormEvent } from "react";
 import Image from "next/image";
 import { SignedIn, useAuth } from "@clerk/nextjs";
+import {
+  EsFlag,
+  SweFlag,
+  EngFlag,
+  RuFlag,
+  FrFlag,
+} from "../../public/icons/FlagIcons";
 
 export default function ImageAnalyzer() {
   const { userId } = useAuth();
@@ -33,18 +40,11 @@ export default function ImageAnalyzer() {
   return (
     <>
       <SignedIn>
-        <div className="max-w-4xl">
-          {image ? (
-            <Image
-              src={image}
-              alt="An image of uploaded document"
-              className="mb-8 w-1/3 object-contain"
-              width={250}
-              height={100}
-            />
-          ) : null}
-
-          <form onSubmit={onSubmit}>
+        <div className="max-w-4xl mx-auto flex justify-center h-full py-12">
+          <form
+            onSubmit={onSubmit}
+            className="flex flex-col items-center gap-8"
+          >
             <input
               key={inputKey}
               type="file"
@@ -59,7 +59,16 @@ export default function ImageAnalyzer() {
                 }
               }}
             />
-            <select
+            {image ? (
+              <Image
+                src={image}
+                alt="An image of uploaded document"
+                className="mb-8 w-1/3 object-contain"
+                width={250}
+                height={100}
+              />
+            ) : null}
+            {/*             <select
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
               className="mt-4 p-2 border rounded"
@@ -69,11 +78,69 @@ export default function ImageAnalyzer() {
               <option value="fr">French</option>
               <option value="sv">Swedish</option>
               <option value="ru">Russian</option>
-            </select>
+            </select> */}
+            <div className="flex flex-col items-center">
+              <h4 className="font-semibold font-bebasNeue text-xl">
+                Choose what language you want your response in
+              </h4>
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setLanguage("en")}
+                  className={`px-2 m-1  ${
+                    language === "en" ? "border-2 border-blue-500" : ""
+                  } rounded-md`}
+                >
+                  <EngFlag />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLanguage("sv")}
+                  className={`px-2 m-1 ${
+                    language === "sv" ? "border-2 border-blue-500" : ""
+                  } rounded-md`}
+                >
+                  <SweFlag />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLanguage("fr")}
+                  className={`px-2 m-1 ${
+                    language === "fr" ? "border-2 border-blue-500" : ""
+                  } rounded-md`}
+                >
+                  <FrFlag />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLanguage("es")}
+                  className={`px-2 m-1 ${
+                    language === "es" ? "border-2 border-blue-500" : ""
+                  } rounded-md`}
+                >
+                  <EsFlag />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLanguage("ru")}
+                  className={`px-2 m-1  ${
+                    language === "ru" ? "border-2 border-blue-500" : ""
+                  } rounded-md`}
+                >
+                  <RuFlag />
+                </button>
+              </div>
+            </div>
 
-            <p className="py-8 text-slate-800">
-              {submitted && !response ? "Processing..." : response}
-            </p>
+            {submitted && (
+              <p className="text-slate-800">
+                {submitted && !response ? (
+                  "Processing..."
+                ) : (
+                  <p className="py-4">{response}</p>
+                )}
+              </p>
+            )}
 
             <div className="flex flex-row">
               <button
