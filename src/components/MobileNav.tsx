@@ -10,7 +10,11 @@ export const MobileNav = () => {
 
   return (
     <div className="flex sm:hidden items-center p-4">
-      <div className="z-50 text-darkBrown">IoW</div>
+      <div className="z-50 text-darkBrown">
+        <Link href="/" onClick={() => setIsOpen(false)}>
+          IoW
+        </Link>
+      </div>
       <HamburgerButton isOpen={isOpen} toggleOpen={toggleOpen} />
 
       {isOpen && (
