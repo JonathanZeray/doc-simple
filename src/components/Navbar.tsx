@@ -9,7 +9,7 @@ export const Navbar = () => {
           <NavLink href="/" text="IoW" />
         </div>
         <div className="flex gap-8">
-          <NavLink href="/design-system" text="About" />
+          <NavLink href="/" text="About" />
           <SignedOut>
             <NavLink href="/sign-up" text="Register" />
             <NavLink href="/sign-in" text="Login" />
