@@ -14,6 +14,7 @@ export const LearningSteps = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0 }}
           variants={stepVariants}
           className="flex border-r-[0.25px] border-darkBrown flex-col sm:w-1/4 px-6 pt-4 "
@@ -27,6 +28,7 @@ export const LearningSteps = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
           variants={stepVariants}
           className="flex border-r-[0.25px] border-darkBrown flex-col sm:w-1/4 px-6 pt-4 "
@@ -45,6 +47,7 @@ export const LearningSteps = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
           variants={stepVariants}
           className="flex border-r-[0.25px] border-darkBrown flex-col sm:w-1/4 px-6 pt-4 "
@@ -63,6 +66,7 @@ export const LearningSteps = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
           variants={stepVariants}
           className="flex flex-col sm:w-1/4 px-6 pt-4 "
