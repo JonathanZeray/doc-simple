@@ -1,13 +1,25 @@
-import Link from "next/link";
+import { NavLink } from "@/ui/Buttons";
+import { SignedIn, UserButton, SignedOut } from "@clerk/nextjs";
+
 export const Navbar = () => {
   return (
-    <nav className="p-4 pb-8">
-      <ul className="flex justify-between">
-        <Link href="/">home</Link>
-        <Link href="/sign-in">login</Link>
-        <Link href="/sign-up">register</Link>
-        <Link href="/prev-uploads">uploads</Link>
-      </ul>
-    </nav>
+    <>
+      <nav className="hidden sm:flex px-12 justify-between pt-4 pb-1 sticky top-0 backdrop-blur-sm">
+        <div className="text-xl font-semibold">
+          <NavLink href="/" text="IoW" />
+        </div>
+        <div className="flex gap-8">
+          <NavLink href="/design-system" text="About" />
+          <SignedOut>
+            <NavLink href="/sign-up" text="Register" />
+            <NavLink href="/sign-in" text="Login" />
+          </SignedOut>
+          <SignedIn>
+            <NavLink href="/prev-uploads" text="Uploads" />
+            <UserButton />
+          </SignedIn>
+        </div>
+      </nav>
+    </>
   );
 };
