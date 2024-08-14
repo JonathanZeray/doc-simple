@@ -95,6 +95,7 @@ export default function ImageAnalyzer() {
                   setResponse("");
                   setSubmitted(false);
                   setInputKey(new Date().toString());
+                  setLanguage("en");
                 }}
               >
                 Reset
