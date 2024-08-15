@@ -14,8 +14,7 @@ export async function GET(request: NextRequest) {
 
   try {
     const responses = await getResponseById(userId);
-    console.log("userId: ", userId);
-    console.log("responses: ", responses);
+
     return NextResponse.json(responses);
   } catch (error) {
     console.error("Error fetching responses:", error);
