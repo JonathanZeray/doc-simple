@@ -28,7 +28,13 @@ export default function PrevUploadsPage() {
 
   const formatDate = (createdAt: string) => {
     const date = new Date(createdAt);
-    return date.toLocaleString();
+    return date.toLocaleString(undefined, {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    });
   };
 
   const toggleExpand = (id: number) => {

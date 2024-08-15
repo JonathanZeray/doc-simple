@@ -2,8 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { HamburgerButton } from "@/ui/Buttons";
-import { SignedOut, SignedIn } from "@clerk/nextjs";
+import { SignedOut, SignedIn, UserButton } from "@clerk/nextjs";
 
 export const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +52,7 @@ export const MobileNav = () => {
         isVisible ? "top-0" : "-top-20"
       }`}
     >
-      <div className="z-50 text-darkBrown">
+      <div className="z-50 text-darkBrown font-bold">
         <Link href="/" onClick={() => setIsOpen(false)}>
           IoW
         </Link>
@@ -150,6 +149,9 @@ export const MobileNav = () => {
                     View your previously simplified documents
                   </p>
                 </Link>
+                <div className="absolute top-2 right-44">
+                  <UserButton />
+                </div>
               </SignedIn>
             </ul>
           </motion.div>

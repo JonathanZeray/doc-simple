@@ -9,3 +9,8 @@ body {
   margin: 0;
   background-color: #fff9f2;
 }
+
+.cl-avatarBox {
+  width: 2.75rem;
+  height: 2.75rem;
+}
