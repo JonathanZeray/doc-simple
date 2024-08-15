@@ -9,6 +9,7 @@ import {
   RuFlag,
   FrFlag,
 } from "../../public/icons/FlagIcons";
+import { ImagePlaceholder } from "@/ui/ImagePlaceholder";
 
 export default function ImageAnalyzer() {
   const { userId } = useAuth();
@@ -62,12 +63,15 @@ export default function ImageAnalyzer() {
             {image ? (
               <Image
                 src={image}
-                alt="An image of uploaded document"
-                className="mb-8 w-1/3 object-contain"
+                alt="Uploaded document"
+                className="object-contain"
                 width={250}
                 height={100}
               />
-            ) : null}
+            ) : (
+              <ImagePlaceholder />
+            )}
+
             <div className="flex flex-col items-center">
               <h4 className="font-semibold font-bebasNeue text-lg text-darkBrown">
                 Choose what language you want your response in
