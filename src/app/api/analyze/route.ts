@@ -2,7 +2,7 @@ import { analyzeImage } from "@/lib/analyzer";
 import { NextResponse, NextRequest } from "next/server";
 import { addResponse } from "@/server/queries";
 
-//export const runtime = "edge";
+export const runtime = "edge";
 
 export async function POST(request: NextRequest) {
   const data = await request.formData();
