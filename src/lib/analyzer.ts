@@ -16,9 +16,9 @@ export const analyzeImage = async (file: File, language: string) => {
           {
             type: "text",
             text:
-              "Summarize this document with specific bulletpoints." +
-              "The language should be non formal, avoid technical terms. Don't include anything else in the response." +
-              `Please provide the summary in ${language}.`,
+              "Summarize this document with specific bulletpoints with titles." +
+              "Language should be non-formal and avoid technical terms. Don't include anything else in the response." +
+              `Provide the summary in ${language}.`,
           },
           {
             type: "image_url",

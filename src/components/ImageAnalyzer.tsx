@@ -133,16 +133,34 @@ export default function ImageAnalyzer() {
             </div>
 
             {submitted && (
-              <p className="text-slate-800">
-                {submitted && !response ? (
-                  "Processing..."
-                ) : (
-                  <p className="py-4">{response}</p>
-                )}
-              </p>
+              <div className="w-2/3 sm:w-1/2 flex justify-center items-center">
+                <div className="text-slate-800">
+                  {submitted && !response
+                    ? "Processing..."
+                    : response
+                        .split("\n")
+                        .filter((line) => line.trim() !== "")
+                        .map((line, index) => {
+                          const [title, ...content] = line
+                            .split(" - ")
+                            .map((str) => str.trim());
+                          return (
+                            <div key={index} className="py-2">
+                              <h4 className="font-bold text-lg text-darkBrown">
+                                {title}
+                              </h4>
+                              {content.length > 0 && (
+                                <p className="mt-1 text-darkBrown">
+                                  {content.join(" - ")}
+                                </p>
+                              )}
+                            </div>
+                          );
+                        })}
+                </div>
+              </div>
             )}
-            {/*     <button className="px-4 py-1 bg-darkBrown text-white  text-xl w-fit rounded-lg">
-             */}
+
             <div className="flex flex-row gap-4">
               <button
                 className={`${
