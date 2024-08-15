@@ -10,7 +10,9 @@ body {
   background-color: #fff9f2;
 }
 
-.cl-avatarBox {
-  width: 2.75rem;
-  height: 2.75rem;
+@media only screen and (width <= 639px) {
+  .cl-avatarBox {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
