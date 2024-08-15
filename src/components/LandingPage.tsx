@@ -10,7 +10,7 @@ export const LandingPage = () => {
             In other words
           </h1>
           <div className="flex flex-col items-center sm:items-start gap-4 sm:gap-0">
-            <h3 className="text-lg sm:text-2xl text-[#013912] leading-6 sm:text-darkBrown pb-3">
+            <h3 className="text-lg sm:text-2xl leading-6 text-darkBrown pb-3">
               Easily transform complex legal, insurance, and technical documents
               into simple, understandable language. <br /> Upload your documents
               now and get clear explanations in seconds.
