@@ -68,17 +68,6 @@ export default function ImageAnalyzer() {
                 height={100}
               />
             ) : null}
-            {/*             <select
-              value={language}
-              onChange={(e) => setLanguage(e.target.value)}
-              className="mt-4 p-2 border rounded"
-            >
-              <option value="en">English</option>
-              <option value="es">Spanish</option>
-              <option value="fr">French</option>
-              <option value="sv">Swedish</option>
-              <option value="ru">Russian</option>
-            </select> */}
             <div className="flex flex-col items-center">
               <h4 className="font-semibold font-bebasNeue text-lg text-darkBrown">
                 Choose what language you want your response in
@@ -132,35 +121,6 @@ export default function ImageAnalyzer() {
               </div>
             </div>
 
-            {submitted && (
-              <div className="w-2/3 sm:w-1/2 flex justify-center items-center">
-                <div className="text-slate-800">
-                  {submitted && !response
-                    ? "Processing..."
-                    : response
-                        .split("\n")
-                        .filter((line) => line.trim() !== "")
-                        .map((line, index) => {
-                          const [title, ...content] = line
-                            .split(" - ")
-                            .map((str) => str.trim());
-                          return (
-                            <div key={index} className="py-2">
-                              <h4 className="font-bold text-lg text-darkBrown">
-                                {title}
-                              </h4>
-                              {content.length > 0 && (
-                                <p className="mt-1 text-darkBrown">
-                                  {content.join(" - ")}
-                                </p>
-                              )}
-                            </div>
-                          );
-                        })}
-                </div>
-              </div>
-            )}
-
             <div className="flex flex-row gap-4">
               <button
                 className={`${
@@ -186,6 +146,31 @@ export default function ImageAnalyzer() {
               >
                 Reset
               </button>
+            </div>
+            <div className="flex flex-col w-4/5">
+              {submitted && !response ? (
+                <p className="text-center">Processing..</p>
+              ) : (
+                response
+                  .split("\n- ")
+                  .filter((line) => line.trim() !== "")
+                  .map((line, index) => {
+                    const parts = line
+                      .split("\n")
+                      .filter((part) => part.trim() !== "");
+                    const title = parts[0];
+                    const content = parts.slice(1).join(" ").trim();
+
+                    return (
+                      <div key={index} className="py-2">
+                        <h4 className="font-bold text-lg text-darkBrown">
+                          {title}
+                        </h4>
+                        {content && <p className="text-darkBrown">{content}</p>}
+                      </div>
+                    );
+                  })
+              )}
             </div>
           </form>
         </div>
