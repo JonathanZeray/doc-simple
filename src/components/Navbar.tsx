@@ -7,7 +7,7 @@ import Link from "next/link";
 export const Navbar = () => {
   return (
     <>
-      <nav className="hidden sm:flex px-12 justify-between py-2 sticky top-0 backdrop-blur-[2px]">
+      <nav className="hidden sm:flex px-12 justify-between pt-5 pb-2 sticky top-0 backdrop-blur-[2px]">
         <Link href="/">
           <Logo />
         </Link>
