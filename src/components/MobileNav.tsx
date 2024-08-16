@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { SignedOut, SignedIn, UserButton } from "@clerk/nextjs";
+import { Logo } from "../../public/icons/Logo";
 
 export const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +55,7 @@ export const MobileNav = () => {
     >
       <div className="z-50 text-darkBrown font-bold">
         <Link href="/" onClick={() => setIsOpen(false)}>
-          IoW
+          <Logo />
         </Link>
       </div>
       <button
