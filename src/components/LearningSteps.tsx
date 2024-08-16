@@ -9,7 +9,7 @@ const stepVariants = {
 export const LearningSteps = () => {
   return (
     <>
-      <h3 className="px-12 text-5xl sm:text-6xl font-bold text-darkBrown font-bebasNeue w-fit">
+      <h3 className="pl-6 text-5xl sm:text-6xl font-bold text-darkBrown font-bebasNeue w-fit">
         How it works
       </h3>
       <section className="flex flex-col sm:flex-row w-full justify-between min-h-60 mb-12">
@@ -28,7 +28,7 @@ export const LearningSteps = () => {
             Login
           </h4>
           <p className="text-darkBrown">
-            Create an account by using Google or with a email & password.
+            Create an account with Facebook, Google or email & password.
           </p>
         </motion.div>
         <motion.div
@@ -46,8 +46,8 @@ export const LearningSteps = () => {
             Upload Document
           </h4>
           <p className="text-darkBrown">
-            Navigate to the upload section and select your document image (JPG,
-            PNG, WEBP) to upload.
+            Navigate to the upload section and select your document (JPG, PNG,
+            WEBP), or take a photo with your phone to upload.
           </p>
         </motion.div>
         <motion.div
@@ -65,8 +65,8 @@ export const LearningSteps = () => {
             Submit for processing
           </h4>
           <p className="text-darkBrown">
-            Click the Submit button to send your document and context for
-            processing.
+            Choose between 5 languages to translate your document in then click
+            Submit to process it.
           </p>
         </motion.div>
         <motion.div
