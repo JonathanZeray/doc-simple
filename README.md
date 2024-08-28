@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Doc-simple (In Other Words)
 
-## Getting Started
+**Doc-simple**, also known as **In Other Words**, is an application designed to bridge the gap between technical language and everyday understanding. Using OpenAI's API, it simplifies and translates documents written in complex legal or technical jargon into plain language across multiple languages.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Document Simplification:** Upload a PNG, JPG, or WEBP image of a document, and the app will simplify the content into everyday language.
+- **Multi-language Support:** Choose from five languages—English, Swedish, Spanish, French, or Russian—to translate and simplify your document.
+- **User Accounts:** Register or log in to access your document history and re-download past uploads.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project leverages a variety of modern technologies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Frontend:** React, Next.js, Framer Motion, Tailwind CSS
+- **Backend:** Vercel Postgres, Drizzle ORM
+- **API Integration:** OpenAI API for text simplification and translation
+- **Authentication:** Clerk for user authentication
 
-## Learn More
+## Installation and Setup
 
-To learn more about Next.js, take a look at the following resources:
+To clone and run this project locally, you'll need to:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   git clone https://github.com/yourusername/doc-simple.git
+   cd doc-simple
+   ```
 
-## Deploy on Vercel
+2. Install dependencies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Set up environment variables by creating a `.env` file in the root directory. You will need the following keys:
+
+   - PostgreSQL Database Key
+   - OpenAI API Key
+   - Clerk API Key
+   - Additional keys as required
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+The app will be available at `http://localhost:3000`.
+
+## Usage
+
+1. **Register or Log In:** Access the homepage after logging in.
+2. **Upload Document:** Scroll down to find the upload section, where you can upload your document in PNG, JPG, or WEBP format.
+3. **Translation and Simplification:** Choose your desired language, and the app will process and display the simplified text.
+4. **View Upload History:** Access the "Uploads" section from the navbar to view your previous uploads.
+
+### Limitations
+
+- **Image Formats:** The app currently only supports JPG, PNG, and WEBP formats due to OpenAI API limitations.
+- **Output Variability:** The format of the simplified text may vary depending on the language selected, influenced by the response from OpenAI's API.
+
+## Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature-name`).
+5. Create a Pull Request.
+
+**Areas of Interest:**
+
+- Adding support for converting HEIC images (the default iPhone format) to JPG/PNG/WEBP.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
