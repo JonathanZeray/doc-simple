@@ -27,6 +27,7 @@ export const LandingPage = () => {
         <div className="w-full sm:h-full flex justify-center items-center">
           <Image
             src="/images/form-illustration.webp"
+            priority={true}
             width={500}
             height={500}
             alt="Form illustration"
