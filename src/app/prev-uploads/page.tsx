@@ -43,7 +43,7 @@ export default function PrevUploadsPage() {
 
   return (
     <div className="w-4/5 mx-auto">
-      <h1 className="font-bold text-2xl sm:text-6xl my-4 sm:my-10 text-darkBrown text-center font-bebasNeue">
+      <h1 className="text-2xl sm:text-6xl my-4 sm:my-10 text-darkBrown text-center font-clash-display-bold">
         Your Previous Uploads
       </h1>
       {responses.length > 0 ? (

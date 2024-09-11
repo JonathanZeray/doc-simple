@@ -9,7 +9,7 @@ const stepVariants = {
 export const LearningSteps = () => {
   return (
     <>
-      <h3 className="pl-6 text-5xl sm:text-6xl font-bold text-darkBrown font-bebasNeue w-fit">
+      <h3 className="pl-6 text-5xl sm:text-6xl text-darkBrown font-clash-display-semibold w-fit">
         How it works
       </h3>
       <section className="flex flex-col sm:flex-row w-full justify-between min-h-60 mb-12">

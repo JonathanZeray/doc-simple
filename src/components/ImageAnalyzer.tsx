@@ -86,8 +86,8 @@ export default function ImageAnalyzer() {
             )}
 
             <div className="flex flex-col items-center">
-              <h4 className="font-semibold font-bebasNeue text-lg text-darkBrown">
-                Choose what language you want your response in
+              <h4 className="font-clash-display-semibold text-lg text-darkBrown">
+                Choose a language for your response
               </h4>
               <div>
                 <button

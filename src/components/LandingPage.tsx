@@ -6,7 +6,7 @@ export const LandingPage = () => {
     <>
       <div className="flex flex-col-reverse sm:flex-row w-full sm:h-screen gap-16 sm:gap-0 pb-24">
         <div className="flex flex-col px-4 sm:px-12 justify-center gap-4 sm:gap-10">
-          <h1 className="text-5xl sm:text-8xl font-bold text-darkBrown font-bebasNeue">
+          <h1 className="text-5xl sm:text-8xl font-clash-display-bold text-darkBrown ">
             In other words
           </h1>
           <div className="flex flex-col items-center sm:items-start gap-4 sm:gap-0">
@@ -17,7 +17,7 @@ export const LandingPage = () => {
             </h3>
             <Link
               href="/sign-up"
-              className="flex items-center px-6 py-1 text-2xl font-semibold border-2 border-black w-fit rounded-xl font-bebasNeue bg-[#ff8a60]"
+              className="flex items-center px-6 py-1 text-2xl border-2 border-black w-fit rounded-xl font-clash-display-semibold bg-[#ff8a60]"
             >
               <span className="mr-4">Get Started</span>
               <span className="text-xl">→</span>
