@@ -114,8 +114,8 @@ export const MobileNav = () => {
                 onClick={() => setIsOpen(!isOpen)}
                 className=" px-8 py-2 text-darkBrown"
               >
-                <h4 className="font-semibold text-lg">About</h4>
-                <p className="opacity-60">
+                <h4 className="font-clash-display-medium text-lg">About</h4>
+                <p className="font-clash-display-light">
                   About us and why this site was created
                 </p>
               </Link>
@@ -125,16 +125,20 @@ export const MobileNav = () => {
                   onClick={() => setIsOpen(!isOpen)}
                   className=" px-8 py-2 text-darkBrown"
                 >
-                  <h4 className="font-semibold text-lg">Register</h4>
-                  <p className="opacity-60">Create an account to get started</p>
+                  <h4 className="font-clash-display-medium text-lg">
+                    Register
+                  </h4>
+                  <p className="font-clash-display-light">
+                    Create an account to get started
+                  </p>
                 </Link>
                 <Link
                   href="/sign-in"
                   onClick={() => setIsOpen(!isOpen)}
                   className=" px-8 py-2 text-darkBrown"
                 >
-                  <h4 className="font-semibold text-lg">Login</h4>
-                  <p className="opacity-60">
+                  <h4 className="font-clash-display-medium text-lg">Login</h4>
+                  <p className="font-clash-display-light">
                     Store all your documents in one place
                   </p>
                 </Link>
@@ -145,8 +149,8 @@ export const MobileNav = () => {
                   onClick={() => setIsOpen(!isOpen)}
                   className=" px-8 py-2 text-darkBrown"
                 >
-                  <h4 className="font-semibold text-lg">Uploads</h4>
-                  <p className="opacity-60">
+                  <h4 className="font-clash-display-medium text-lg">Uploads</h4>
+                  <p className="font-clash-display-light">
                     View your previously simplified documents
                   </p>
                 </Link>
