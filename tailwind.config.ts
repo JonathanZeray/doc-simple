@@ -18,7 +18,6 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        bebasNeue: ["Bebas Neue", "sans-serif"],
         "clash-display-light": ["ClashDisplay-Light", "sans-serif"],
         "clash-display-regular": ["ClashDisplay-Regular", "sans-serif"],
         "clash-display-medium": ["ClashDisplay-Medium", "sans-serif"],
