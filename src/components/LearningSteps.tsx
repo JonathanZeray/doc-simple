@@ -19,7 +19,7 @@ export const LearningSteps = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0 }}
           variants={stepVariants}
-          className="flex border-r-[0.25px] border-darkBrown flex-col sm:w-1/4 px-6 pt-4 "
+          className="flex sm:border-r-[0.25px] border-darkBrown flex-col sm:w-1/4 px-6 pt-4 "
         >
           <span className="bg-darkBrown text-white text-base font-bold px-2 rounded-full w-fit h-fit">
             1
@@ -37,7 +37,7 @@ export const LearningSteps = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
           variants={stepVariants}
-          className="flex border-r-[0.25px] border-darkBrown flex-col sm:w-1/4 px-6 pt-4 "
+          className="flex sm:border-r-[0.25px] border-darkBrown flex-col sm:w-1/4 px-6 pt-4 "
         >
           <span className="bg-darkBrown text-white text-base font-bold px-2 rounded-full w-fit h-fit">
             2
@@ -56,7 +56,7 @@ export const LearningSteps = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
           variants={stepVariants}
-          className="flex border-r-[0.25px] border-darkBrown flex-col sm:w-1/4 px-6 pt-4 "
+          className="flex sm:border-r-[0.25px] border-darkBrown flex-col sm:w-1/4 px-6 pt-4 "
         >
           <span className="bg-darkBrown text-white text-base font-bold px-2 rounded-full w-fit h-fit">
             3
