@@ -110,7 +110,7 @@ export const MobileNav = () => {
           >
             <ul className="w-full h-full flex flex-col gap-2  justify-center">
               <Link
-                href="/"
+                href="/about"
                 onClick={() => setIsOpen(!isOpen)}
                 className=" px-8 py-2 text-darkBrown"
               >

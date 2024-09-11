@@ -12,7 +12,7 @@ export const Navbar = () => {
           <Logo />
         </Link>
         <div className="flex gap-8">
-          <NavLink href="/" text="About" />
+          <NavLink href="/about" text="About" />
           <SignedOut>
             <NavLink href="/sign-up" text="Register" />
             <NavLink href="/sign-in" text="Login" />
