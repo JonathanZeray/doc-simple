@@ -49,15 +49,17 @@ export const MobileNav = () => {
   return (
     <nav
       ref={navRef}
-      className={`sticky transition-all duration-300 ease-in-out flex sm:hidden items-center p-4 ${
+      className={`min-h-16 sticky transition-all duration-300 ease-in-out flex sm:hidden items-center p-4 ${
         isVisible ? "top-0" : "-top-20"
       }`}
     >
-      <div className="z-50 text-darkBrown font-bold">
-        <Link href="/" onClick={() => setIsOpen(false)}>
-          <Logo />
-        </Link>
-      </div>
+      {!isOpen && (
+        <div className="z-50 text-darkBrown font-bold">
+          <Link href="/" onClick={() => setIsOpen(false)}>
+            <Logo />
+          </Link>
+        </div>
+      )}
       <button
         onClick={toggleOpen}
         className="absolute right-5 flex flex-col justify-center items-center z-50"
